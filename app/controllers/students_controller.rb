@@ -10,6 +10,11 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    respond_to do |format|
+      format.html #{render 'shared/fancy_hello'}
+      format.xml {render xml: @student.to_xml}
+      format.json {render json: @student.to_json}
+    end
   end
 
   # GET /students/new
