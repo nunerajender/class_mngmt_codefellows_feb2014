@@ -1,9 +1,11 @@
-<h1>Listing students</h1>
+<h1>All Students</h1>
 
 <table>
   <thead>
     <tr>
       <th>Full name</th>
+      <th></th>
+      <th></th>
       <th>Age</th>
       <th>Bio</th>
       <th>Title</th>
@@ -12,21 +14,21 @@
       <th>Gender</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
-
+<%= link_to 'GOOGLE', 'http://www.google.com' %>
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= student.full_name %></td>
+        <td><%= link_to student.full_name, student %></td>
+        <td><a href='/students/<%= student.id %>'><%= student.full_name %></a></td>
+        <td><a href='<%= student_path(student) %>'><%= student.full_name %></a></td>
         <td><%= student.age %></td>
-        <td><%= student.bio %></td>
+        <td><%= short_bio student %></td>
         <td><%= student.title %></td>
         <td><%= student.company %></td>
         <td><%= student.favorite_ice_cream %></td>
         <td><%= student.gender %></td>
-        <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
