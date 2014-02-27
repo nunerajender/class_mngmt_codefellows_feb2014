@@ -15,6 +15,13 @@
     <%= f.label :full_name %><br>
     <%= f.text_field :full_name %>
   </div>
+
+  <div class="field">
+  <%= f.label :courses %>
+  <%= f.collection_select( :course_ids,
+              Course.all,
+              :id, :title, {selected: @student.course_ids, include_blank: false}, {multiple: true}) %>
+  </div>
   <div class="field">
     <%= f.label :email %><br>
     <%= f.email_field :email %>
