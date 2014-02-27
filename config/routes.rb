@@ -1,4 +1,8 @@
 ClassMngt::Application.routes.draw do
+  get 'courses/new'
+
+  post 'courses', to: 'courses#create'
+
   resources :students
 
   get 'happy', to: 'students#index'

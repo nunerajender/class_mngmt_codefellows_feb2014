@@ -1,0 +1,18 @@
+<h1> Add A New Course</h1>
+<%= form_for @course do |form| %>
+
+  <%= form.label :title, "Put your title here" %>
+  <%= form.text_field :title %>
+
+  <br/>
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+
+  <br/>
+  <%= form.label :start_date %>
+  <%# date_field("course", "start_date") %>
+ <!--  html comment <%= form.date_field :start_date %> -->
+
+  <%= form.submit "Make your course!" %>
+
+<% end -%>
