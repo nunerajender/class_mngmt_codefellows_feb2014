@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+count = Course.where(title: 'Rails Night Class').count
+
+if count == 0
+  Course.create title: 'Rails Night Class', description: 'Learning Rails by Night!'
+end
