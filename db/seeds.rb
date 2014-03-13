@@ -8,6 +8,7 @@
 
 count = Course.where(title: 'Rails Night Class').count
 
+puts "Creating initial courses if #{count} is 0"
 if count == 0
   Course.create title: 'Rails Night Class', description: 'Learning Rails by Night!'
 end

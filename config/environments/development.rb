@@ -31,3 +31,6 @@ ClassMngt::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 end
+
+
+APP_URL = 'localhost:3000'
