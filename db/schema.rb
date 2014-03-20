@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311024159) do
+ActiveRecord::Schema.define(version: 20140320032351) do
 
   create_table "courses", force: true do |t|
     t.integer  "student_id"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20140311024159) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "picture"
   end
 
   add_index "students", ["confirmation_token"], name: "index_students_on_confirmation_token", unique: true

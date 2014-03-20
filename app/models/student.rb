@@ -12,6 +12,8 @@ class Student < ActiveRecord::Base
 
   after_create :notify_admin
 
+  mount_uploader :picture, PictureUploader
+
   scope :renees, -> do
     where(full_name: 'Renee')
   end

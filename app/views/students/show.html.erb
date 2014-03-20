@@ -6,6 +6,10 @@
 </p>
 
 <p>
+  <%= image_tag @student.picture_url, height: 50, width: 50 if @student.picture %>
+</p>
+
+<p>
   <strong>Age:</strong>
   <%= @student.age %>
 </p>
