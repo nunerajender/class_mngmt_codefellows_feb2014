@@ -10,6 +10,8 @@ class Student < ActiveRecord::Base
 
   validates_presence_of :full_name, :email
 
+  after_create :notify_admin
+
   scope :renees, -> do
     where(full_name: 'Renee')
   end
@@ -31,5 +33,12 @@ class Student < ActiveRecord::Base
   def age_in_60_years
     (age + 60).years
   end
+
+private
+
+  def notify_admin
+    AdminMailer.notify_admin_about_new_student(self).deliver #if Rails.env.production?
+  end
+
 
 end
